@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Actors</title>
+</head>
+<body>
+
+	<style type="text/css">
+
+		html{
+			background-color: #2e8799;
+		}
+
+		.actors{
+			/*border: 1px solid black;*/
+			border-radius: 15px;
+			padding: 4px;
+			background-color: lightblue;
+			margin: 40px;
+		}
+
+		h1{
+			text-align: center;
+			font-size: 50px;
+			font-family: monospace;
+		}
+		
+		.right{
+			/*border: 1px solid black;*/
+			text-align: center;
+			border-radius: 15px;
+			padding: 5px;
+			margin: 30px;			
+			margin-right: 100px;
+			margin-left: 100px;
+			background-color: lightgreen;
+			font-family: Cursive;
+		}
+
+		.left{
+			/*border: 1px solid black;*/
+			text-align: center;
+			border-radius: 15px;
+			padding: 6px;
+			margin: 30px;
+			margin-right: 100px;
+			margin-left: 100px;
+			background-color: lightgreen;
+			font-family: Cursive;
+		}
+
+		.anchor{
+			text-decoration: none;
+			text-align: center;
+			padding-top: 100px
+			color: yellow;
+			font-family: Cursive;
+		}
+
+		a:visited{
+			color: white;
+		}
+
+		a:hover{
+			color: black;
+		}
+
+
+	</style>
+
+	<div class="actors">
+		<h1>Actors</h1>
+
+	{% for actor in items %}
+		{% if actor.married %}
+			<div class="left">
+				<p>{{ actor.name }} {{ actor.surname }} is {{ actor.age }} years old. and is married</p>
+			</div>
+		{% endif %}
+
+		{% if not actor.married %}
+			<div class="right">
+				<p>{{ actor.name }} {{ actor.surname }} is {{ actor.age }} years old. and is not married</p>
+			</div>
+		{% endif %}
+
+	{% endfor %}
+
+</div>
+	<div class="anchor">
+		<a href="/">To go back</a>
+	</div>
+</body>
+</html>

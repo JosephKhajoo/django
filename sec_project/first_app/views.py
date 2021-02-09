@@ -8,7 +8,8 @@ dict_ = {1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100, 11
 
 
 def greeting(request):
-	return HttpResponse("<h1>Hello this is my page</h1>")
+	context = {'name': "Suleyman", 'surname': "Brnakal", 'numbers': [i for i in range(4)]}
+	return render(request, "first_app/home.html", context)
 
 
 def intro(request):
