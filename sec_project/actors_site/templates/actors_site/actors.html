@@ -4,7 +4,7 @@
 	<title>Actors</title>
 </head>
 <body>
-
+<!-- 
 	<style type="text/css">
 
 		html{
@@ -74,13 +74,13 @@
 	{% for actor in items %}
 		{% if actor.married %}
 			<div class="left">
-				<p>{{ actor.name }} {{ actor.surname }} is {{ actor.age }} years old. and is married</p>
+				<p>{{ actor.name }} {{ actor.surname }} is {{ actor.age }} years old. And is married.</p>
 			</div>
 		{% endif %}
 
 		{% if not actor.married %}
 			<div class="right">
-				<p>{{ actor.name }} {{ actor.surname }} is {{ actor.age }} years old. and is not married</p>
+				<p>{{ actor.name }} {{ actor.surname }} is {{ actor.age }} years old. And is not married.</p>
 			</div>
 		{% endif %}
 
@@ -89,6 +89,13 @@
 </div>
 	<div class="anchor">
 		<a href="/">To go back</a>
-	</div>
+	</div> -->
+
+	{% for movie in movies %}
+		{{ movie.name }} - {{ movie.genre }}<br>
+		{% for actor in movie.actors.all %}
+			{{ actor.name }} {{ actor.surname }}<br>
+		{% endfor %}
+	{% endfor %}
 </body>
 </html>

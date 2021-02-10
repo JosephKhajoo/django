@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Films</title>
+</head>
+<body>
+<style type="text/css">
+
+	html{
+		background-color: #004080;
+	}
+
+	.header-boarder{
+		background-color: #002b56;
+		text-align: center;
+		border: 1px solid black;
+		font-family: cursive;
+		margin-right: 500px;
+		margin-left: 500px;
+		font-size: 30px;
+		border-radius: 30px;
+	}
+
+	.paragraph{
+		margin:50px;
+		background-color: #024b42;
+		border-radius: 15px;
+		text-align: center;/*
+		border: 1px solid black;*/
+		font-family: cursive;
+		margin-right: 500px;
+		margin-left: 500px;
+		font-size: 30px;
+	}
+
+</style>
+
+<div class="header-boarder">
+	<h1>Films</h1>
+</div>
+
+{% for film in films %}
+	<div class="paragraph">
+		<p>{{ film.name }} - {{ film.release_date }}</p>
+	</div>
+{% endfor %}
+
+</body>
+</html>
